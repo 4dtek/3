@@ -1,0 +1,321 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden; /* إزالة التمرير الأفقي */
+}
+
+/* تحسينات الواجهة */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* تحسين حاوية المشغل والقنوات */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    overflow-x: hidden; /* إزالة التمرير الأفقي */
+}
+
+/* تحسين مشغل الفيديو */
+.video-container {
+    flex: 2;
+    width: 100%;
+    max-width: 70%;
+    height: 60vh; /* جعل الطول ديناميكيًا */
+    min-height: 200px; /* لضمان ظهور المشغل */
+    background: linear-gradient(135deg, #e3f2fd, #90caf9);
+    border-radius: 12px;
+    overflow-x: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين الفيديو */
+#videoPlayer {
+    width: 100%;
+    height: 100%; /* ملء الحاوية بالكامل */
+    border-radius: 12px;
+}
+
+/* تحسين حقل البحث */
+#searchContainer {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 400px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* تحسين قائمة القنوات */
+.channels-list-container {
+    flex: 1;
+    width: 100%;
+    max-width: 28%;
+    height: 400px; /* تحديد ارتفاع ثابت للقائمة */
+    overflow-y: auto; /* تمكين التمرير الرأسي */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* إزالة التمرير الأفقي */
+}
+
+/* تنسيق قائمة القنوات */
+#channelsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#channelsList li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#channelsList li:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* تحسين الصور */
+#channelsList img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين النصوص */
+#channelsList li span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* تحسين الرسالة */
+#loadingMessage {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    background-color: #ff9800;
+    color: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* تحسين التمرير للقائمة */
+.channels-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.channels-list-container::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+.channels-list-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* زيادة الفجوة بين العناصر */
+        padding: 15px; /* إضافة مسافة padding لتحسين التوزيع */
+        overflow-x: hidden;
+    }
+
+    .header {
+        width: 100%;
+        height: 60px; /* ارتفاع الـ header */
+        background-color: #333; /* خلفية الـ header */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20; /* رفع أولوية الـ header */
+    }
+
+    .video-container {
+        width: 100%; /* استخدام العرض الكامل */
+        height: 50vh; /* تقليل الطول قليلاً للأجهزة الصغيرة */
+        min-height: 200px; /* ضمان بقاء المشغل دائمًا */
+        position: fixed; /* تثبيت المشغل في أسفل الـ header */
+        top: 95px; /* وضع المشغل أسفل الـ header مع إضافة المسافة */
+      
+        right: 0;
+        z-index: 10; /* رفع أولوية المشغل */
+        background-color: #000; /* تحسين ظهور المشغل على خلفية داكنة */
+        border-radius: 0 0 15px 15px; /* إضافة حواف مدورة للمشغل */
+        transform: translateX(-20%) translateY(10%); 
+    }
+
+    .channels-list-container {
+        max-width: 100%;
+        height: 300px; /* ارتفاع ثابت للقائمة */
+        margin-top: 20px; /* إضافة مسافة بين المشغل والقائمة */
+        overflow-y: auto; /* تمكين التمرير العمودي */
+        padding-right: 10px; /* إضافة مساحة لتمكين التمرير */
+        border-radius: 10px; /* إضافة حواف مدورة */
+        background-color: rgba(0, 0, 0, 0.7); /* خلفية شبه شفافة لإعطاء تأثير التباين */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* إضافة ظل لتحسين التباين */
+    }
+
+    #channelsList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top:50%
+    }
+    
+
+    #channelsList li {
+        padding: 15px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px; /* تحسين المسافة بين النص والصورة */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* تأثير تغيير الخلفية */
+        border-bottom: 1px solid #444; /* إضافة حدود أسفل العناصر */
+    }
+
+    #channelsList li:hover {
+        background-color: #444; /* تغيير الخلفية عند التمرير على العنصر */
+    }
+
+    #channelsList img {
+        width: 45px; /* زيادة حجم الصور لجعلها أكثر وضوحًا */
+        height: 45px;
+        border-radius: 50%; /* جعل الصور دائرية */
+        object-fit: cover; /* التأكد من عدم تشويه الصورة */
+    }
+
+    #channelsList li span {
+        font-size: 16px;
+        color: #fff; /* تحسين لون النص */
+        overflow: hidden;
+        text-overflow: ellipsis; /* إضافة الحواف النصية المتقطعة */
+        white-space: nowrap; /* منع النص من الانتقال إلى سطر جديد */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        gap: 15px; /* زيادة الفجوة بين العناصر للحصول على توزيع متساوٍ */
+        padding: 10px; /* إضافة padding لتحسين توزيع العناصر */
+    }
+
+    .header {
+        width: 100%;
+        height: 50px; /* تقليل ارتفاع الـ header في الشاشات الصغيرة */
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20; /* رفع أولوية الـ header */
+    }
+
+    /* تعديل للـ video-container */
+    .video-container {
+        width: 100%;
+        height: auto; /* السماح للطول بالتحكم في المشغل بناءً على النسبة */
+        aspect-ratio: 16/9;
+        position: fixed;
+        top: 105px; /* إضافة المسافة من الأعلى */
+        left: 50%;
+        transform: translateX(-20%) translateY(10%); /* لتوسيط المشغل عموديًا وإنزاله قليلاً */
+        z-index: 10;
+        background-color: #000;
+        border-radius: 0 0 15px 15px;
+    }
+
+    #videoPlayer {
+        width: 100%;
+        height: 100%;
+    }
+
+    #searchInput {
+        font-size: 14px;
+        padding: 10px; /* تحسين مساحة الإدخال */
+        width: 70%; /* جعل مربع البحث يغطي العرض الكامل */
+    }
+    #channelsList{
+        margin-top:50% }
+
+    #channelsList li {
+        padding: 12px; /* زيادة المسافة بين العناصر */
+        font-size: 14px; /* تقليل حجم النص */
+       
+    }
+
+    #channelsList img {
+        width: 40px; /* تصغير حجم الصور */
+        height: 40px;
+    }
+}

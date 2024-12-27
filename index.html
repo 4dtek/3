@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل فيديو احترافي</title>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+</head>
+<body>
+    <header>
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="ابحث عن قناة...">
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="video-container">
+            <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto">
+                <!-- مصدر الفيديو سيتم تغييره بواسطة HLS.js إذا كانت تدفقات HLS -->
+            </video>
+        </div>
+
+        <div class="channels-list-container">
+            <ul class="channels-list" id="channelsList">
+                <!-- القنوات ستضاف هنا باستخدام JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <div id="loadingMessage" class="loading">جاري تحميل القنوات...</div>
+
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+ <!-- إضافة HLS.js -->
+    <script src="script.js"></script>
+</body>
+</html>
